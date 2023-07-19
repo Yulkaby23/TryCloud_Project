@@ -12,6 +12,8 @@ public class DashboardPage {
     public DashboardPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    @FindBy(id = "appmenu")
+    public WebElement appMenu;
 
     @FindBy(xpath = "(//a[@aria-label='Dashboard'])[1]")
     public WebElement dashboardModule;
