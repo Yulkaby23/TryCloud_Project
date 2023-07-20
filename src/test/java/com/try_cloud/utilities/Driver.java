@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class Driver {
+public class    Driver {
 
     //create a private constructor to remove access to this object
     private Driver(){}
@@ -61,6 +61,7 @@ public class Driver {
     /*
     Create a new Driver.closeDriver(); it will use .quit() method to quit browsers, and then set the driver value back to null.
      */
+
     public static void closeDriver(){
         if (driverPool.get()!=null){
             /*
