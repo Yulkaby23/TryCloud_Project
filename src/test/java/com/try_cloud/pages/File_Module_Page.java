@@ -17,25 +17,47 @@ public class File_Module_Page {
     public WebElement filesModule;
 
     @FindBy(xpath = "//a[@class='button new']")
-    public WebElement ButtonNew;
+    public WebElement buttonNew;
 
-    @FindBy(xpath = "//label[@data-action='upload']")
-    public WebElement UploadFile;
+    @FindBy(xpath = "//input[@id='file_upload_start']")
+    public WebElement uploadFile;
+
+
+
 
     @FindBy(xpath = "//a[@data-templatename = 'New folder']")
-    public WebElement NewFolder;
+    public WebElement newFolder;
+
+    @FindBy(id = "view13-input-folder")
+    public WebElement newFolderInput;
+
+    @FindBy(xpath = "//span[@class='nametext']")
+    public WebElement newFolderUploaded;
+
+
 
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement SubmitButton;
 
+    @FindBy(xpath = "//span[@class='nametext']")
+    public WebElement newFileName;
+
     @FindBy(xpath = "//a[@class='action action-menu permanent']")
-    public WebElement ThreeDotsMenu;
+    public WebElement threeDotsMenu;
 
     @FindBy(xpath = "//a[@class='menuitem action action-delete permanent']")
-    public WebElement DeleteOption;
+    public WebElement deleteOption;
 
-    @FindBy(xpath = "//td[@class='filesummary']")
-    public WebElement NumberOfFilesAndFolders;
+    @FindBy(xpath = "//span[@class='dirinfo']")
+    public WebElement numberOfFiles;
+
+    @FindBy(xpath = "//span[@class='fileinfo']")
+    public WebElement numberOfFolders;
+
+
+
+
+
 
 
 }
