@@ -6,7 +6,7 @@ Feature: Users should be able to login
 
 
   Scenario: Verify login
-    Given the user logged in with username as "Employee12" and password as "Employee123"
+    Given the user logged in with username as "Employee32" and password as "Employee123"
 
 
 

@@ -30,6 +30,31 @@ public WebElement digitContactsCount;
 @FindBy(xpath = "//div[@class='vue-recycle-scroller__item-wrapper']")
 public WebElement contactsColum;
 
+@FindBy(xpath = "//div[@class='vue-recycle-scroller__item-wrapper']/div[1]")
+public WebElement firstElementInColum;
 
+@FindBy(xpath = "(//div[@class='trigger'])[6]")
+public WebElement uploadPicture;
+
+
+@FindBy(xpath = "(//button[@class='action-button focusable'])[6]")
+public WebElement chooseFromFile;
+
+@FindBy(xpath = "//button[.='Choose']")
+public WebElement chooseButton;
+
+@FindBy(xpath = "(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[1]")
+public WebElement johnWickPicture;
+
+
+    @FindBy(xpath = "(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[2]")
+public WebElement marcoPoloPicture;
+
+
+@FindBy(xpath = "(//button[@aria-label='Actions'])[6]")
+    public WebElement threeDots;
+
+@FindBy(xpath = "(//span[@class='action-button__text'])[6]")
+public WebElement deleteButton;
 
 }
