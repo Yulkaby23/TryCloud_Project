@@ -2,8 +2,11 @@ package com.try_cloud.pages;
 
 import com.try_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class ContactsModulePage_Milan {
 
@@ -30,8 +33,8 @@ public WebElement digitContactsCount;
 @FindBy(xpath = "//div[@class='vue-recycle-scroller__item-wrapper']")
 public WebElement contactsColum;
 
-@FindBy(xpath = "//div[@class='vue-recycle-scroller__item-wrapper']/div[1]")
-public WebElement firstElementInColum;
+@FindAll({@FindBy(xpath = "//div[@class='vue-recycle-scroller__item-wrapper']/div/div/div[contains(@class, 'line-one')]")})
+public List<WebElement> allNamesInColum;
 
 @FindBy(xpath = "(//div[@class='trigger'])[6]")
 public WebElement uploadPicture;
@@ -42,14 +45,6 @@ public WebElement chooseFromFile;
 
 @FindBy(xpath = "//button[.='Choose']")
 public WebElement chooseButton;
-
-@FindBy(xpath = "(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[1]")
-public WebElement johnWickPicture;
-
-
-    @FindBy(xpath = "(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[2]")
-public WebElement marcoPoloPicture;
-
 
 @FindBy(xpath = "(//button[@aria-label='Actions'])[6]")
     public WebElement threeDots;

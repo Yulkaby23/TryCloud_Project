@@ -50,11 +50,10 @@ public class US003_ContactsModuleDef {
     }
 
 
-    @And("user should see all {string}")
-    public void userShouldSeeAll(String expectedNames) {
+    @And("user should see all entered names")
+    public void userShouldSeeAll() {
 
-        List<String> actualNames = BrowserUtils.getElementsText(contactsModule.contactsColum.findElements(By.xpath("//div[@class='vue-recycle-scroller__item-wrapper']")));
-
+       // Assert.assertTrue(contactsModule.allNamesInColum.);
 
 
     }
@@ -63,8 +62,9 @@ public class US003_ContactsModuleDef {
     @And("number of contacts should match with digit in All contact tab")
     public void numberOfContactsShouldMatchWithDigitInAllContactTab() {
 
-        System.out.println("contactsModule.digitContactsCount.isDisplayed() = " + contactsModule.digitContactsCount.isDisplayed());
-        System.out.println("contactsModule.digitContactsCount.getText() = " + contactsModule.digitContactsCount.getText());
+        String actualNames = contactsModule.contactsColum.getText();
+
+        Assert.assertEquals(contactsModule.digitContactsCount.getText(), contactsModule.allNamesInColum.size()+"");
     }
 
 
@@ -76,21 +76,11 @@ public class US003_ContactsModuleDef {
     @And("user click on Choose from Files")
     public void useClickOnUploadANewPicture() {
 
-        String path1 = "C:\\Users\\milan\\Desktop\\CYDEO\\John Wick picture.jpg";
-        contactsModule.chooseFromFile.sendKeys(path1);
-
-        WebElement johnWickPicture = Driver.getDriver().findElement(By.xpath("(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[1]"));
-        BrowserUtils.sleep(2);
-        System.out.println("johnWickPicture.isDisplayed() = " + johnWickPicture.isDisplayed());
+        String path = "C:\\Users\\milan\\Desktop\\CYDEO\\John Wick picture.jpg";
+        contactsModule.chooseFromFile.sendKeys(path);
 
 
-        WebElement marcoPoloPicture = Driver.getDriver().findElement(By.xpath("(//div[@class='avatardiv popovermenu-wrapper app-content-list-item-icon'])[2]"));
-        BrowserUtils.sleep(2);
-        System.out.println("marcoPoloPicture.isDisplayed() = " + marcoPoloPicture.isDisplayed());
-
- }
-
-
+    }
 
     @And("user click on choose button")
     public void userClickOnChooseButton() {
@@ -98,9 +88,9 @@ public class US003_ContactsModuleDef {
     }
 
 
-  @And("user click in the first element in the colum")
-   public void userClickInTheFirstElementInTheColum() {
-       contactsModule.firstElementInColum.click();
+    @And("user click in the first element in the colum")
+    public void userClickInTheFirstElementInTheColum() {
+        contactsModule.allNamesInColum.get(0).click();
     }
 
     @And("user click on three dots")
@@ -112,7 +102,6 @@ public class US003_ContactsModuleDef {
     public void userDeleteContactByClickingOnDeleteButton() {
         contactsModule.deleteButton.click();
     }
-
 
 
 }
